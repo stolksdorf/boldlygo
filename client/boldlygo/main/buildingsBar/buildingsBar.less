@@ -1,0 +1,49 @@
+.buildingsBar{
+	position: absolute;
+
+	width : 100%;
+
+	bottom: 0;
+
+	.building{
+		display : inline-block;
+		vertical-align: top;
+		width : 16.6667%;
+
+		height : 80px;
+
+		text-align: center;
+
+		color : #bbb;
+
+		border: 1px solid #ccc;
+
+
+		box-sizing         : border-box;
+		-webkit-box-sizing : border-box;
+		-moz-box-sizing    : border-box;
+
+		.content{
+			.verticallyCenter();
+		}
+
+
+		cursor: pointer;
+
+		&:hover{
+			border-color : black;
+			color : #333;
+		}
+
+		&.built{
+			background-color: red;
+		}
+
+		&.operational{
+			background-color: green;
+		}
+
+
+	}
+
+}
