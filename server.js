@@ -4,7 +4,12 @@ var app = express();
 app.use(express.static(__dirname + '/build'));
 
 
-app.get('/', function(req, res){
+app.get('/events', function(req, res){
+	return res.send(fs.readFileSync('./build/events/index.html', 'utf8'));
+});
+
+
+app.get('*', function(req, res){
 	return res.send(fs.readFileSync('./build/boldlygo/index.html', 'utf8'));
 });
 

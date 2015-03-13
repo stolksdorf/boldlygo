@@ -1,12 +1,14 @@
 {
-	"name": "boldlygo",
-	"description" : "A real-time co-op boardgame",
-	"version": "0.0.0",
-	"scripts": {
-		"postinstall": "gulp prod",
-		"start": "node server.js"
-	},
-	"author": "",
-	"license": "BSD-2-Clause",
-	"dependencies": {}
+  "name": "boldlygo",
+  "description": "A real-time co-op boardgame",
+  "version": "0.0.0",
+  "scripts": {
+    "postinstall": "gulp prod",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "flux": "^2.0.1"
+  }
 }

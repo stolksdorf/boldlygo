@@ -5,7 +5,7 @@ var vitreum = require("vitreum"),
 
 
 var gulp = vitreum.tasks(gulp, {
-	entryPoints: ["./client/boldlygo"],
+	entryPoints: ["./client/boldlygo", "./client/events"],
 	DEV: true,
 
 	projectType : "STATIC",
@@ -23,7 +23,7 @@ var gulp = vitreum.tasks(gulp, {
 		"jquery" : ["window.jQuery","<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>"],
 		"lodash" : ["window._","<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.3.0/lodash.min.js'></script>"],
 		"moment" : ["window.moment","<script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js'></script>"],
-		
+
 	},
 	libs: [],
 });

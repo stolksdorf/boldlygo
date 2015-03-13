@@ -3,28 +3,34 @@ var React = require('react/addons');
 var _ = require('lodash');
 var cx = React.addons.classSet;
 
+
+var RARITY_ICON ={
+	COMMON : 'fa fa-circle',
+	UNCOMMON : 'fa fa-square',
+	RARE : 'fa fa-star',
+	EPIC : 'fa fa-exclamation',
+}
+
+
 var Event = React.createClass({
-
-	getInitialState: function() {
-		var text = this.props.event.action.call(this.props.scope);
-
-		return {
-			flavour : text.flavour,
-			effect : text.effect
-		};
-	},
 
 	render : function(){
 		var self = this;
 
-
+		var event = this.props.event;
 
 		return(
 			<div className='event'>
-				<div>{this.props.event.name}</div>
+				<div className='name'>{event.name}</div>
+				<div className='flavour'>{event.flavour}</div>
 
-				{this.state.flavour}
-				{this.state.effect}
+				<ul className='effects'>
+					{_.map(event.effect, function(effect){return <li>{effect}</li>})}
+				</ul>
+
+				<div className='rarity'>
+					<i className={RARITY_ICON[event.rarity]} />
+				</div>
 			</div>
 		);
 	}
