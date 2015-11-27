@@ -1,7 +1,8 @@
 /** @jsx React.DOM */
 var React = require('react/addons');
 var _ = require('lodash');
-var cx = React.addons.classSet;
+
+var List = require('boldlygo/list.jsx')
 
 
 var RARITY_ICON ={
@@ -24,9 +25,9 @@ var Event = React.createClass({
 				<div className='name'>{event.name}</div>
 				<div className='flavour'>{event.flavour}</div>
 
-				<ul className='effects'>
-					{_.map(event.effect, function(effect){return <li>{effect}</li>})}
-				</ul>
+
+
+				<List className='effects' items={event.effect} />
 
 				<div className='rarity'>
 					<i className={RARITY_ICON[event.rarity]} />

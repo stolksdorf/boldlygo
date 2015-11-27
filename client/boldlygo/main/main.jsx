@@ -38,7 +38,7 @@ var Main = React.createClass({
 	handleKeyPress : function(e){
 
 		if(Utils.KEY_CODES.space === e.keyCode){
-			if(this.state.phase === 'EVENTS' && this.state.events.length === this.props.parameters.eventsPerRound){
+			if(this.state.phase === 'EVENTS' && _.size(this.state.events) === this.props.parameters.eventsPerRound){
 				GameActions.nextPhase()
 			}else if(this.state.phase === 'EVENTS'){
 				GameActions.newEvent();

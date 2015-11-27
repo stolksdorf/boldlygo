@@ -7,6 +7,7 @@ var Utils = require('./utils');
 
 var SetupPage = require('./setup/setup.jsx');
 var MainPage = require('./main/main.jsx');
+var EndPage = require('./end/end.jsx');
 
 
 
@@ -16,7 +17,7 @@ var Boldlygo = React.createClass({
 		return {
 			gameRunning: true,
 
-			page : 'setup'
+			page : 'setup' //main, setup
 		};
 	},
 
@@ -30,12 +31,15 @@ var Boldlygo = React.createClass({
 		var self = this;
 		var page;
 		if(this.state.page == 'main'){
-			page = <MainPage />
+			page = <MainPage endGame={this.changePage.bind(null, 'end')}  />
 		}
 
 		if(this.state.page == 'setup'){
 			page = <SetupPage
 					start={this.changePage.bind(null, 'main')} />
+		}
+		if(this.state.page == 'end'){
+			page = <EndPage />
 		}
 		return(
 			<div className='boldlygo'>
